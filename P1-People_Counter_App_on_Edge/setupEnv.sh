@@ -20,5 +20,4 @@ sudo apt-get update
 
 cd /opt/intel/openvino/deployment_tools/tools/model_downloader
 sudo ./downloader.py --name person-detection-retail-0013 --output_dir /home/workspace
-cd -
-python3 main.py -i resources/Pedestrian_Detect_2_1_1.mp4 -m /home/workspace/intel/person-detection-retail-0013/FP32/person-detection-retail-0013.xml -l /opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so -d CPU -pt 0.6 | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 768x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm
+sudo ./downloader.py --name pedestrian-detection-adas-0002 --output_dir /home/workspace
