@@ -15,7 +15,7 @@ export MOD_OPT=/opt/intel/openvino/deployment_tools/model_optimizer
 echo $MOD_OPT
 read -p 'Is OpenVINO version 2019R3 or earlier? (y/n)' answer
 if [[ "$answer" == "y" ]] || [[ "$answer" == "Y" ]]; then
-	python $MOD_OPT/mo_tf.py --input_model frozen_darknet_yolov3_model.pb --tensorflow_use_custom_operations_config $MOD_OPT/extensions/front/tf/yolo_v3.json --batch 1
+	python $MOD_OPT/mo_tf.py --input_model frozen_darknet_yolov3_model.pb --tensorflow_use_custom_operations_config $MOD_OPT/extensions/front/tf/yolo_v3.json --batch 1 --output_dir /home/workspace/model
 else
-	python $MOD_OPT/mo_tf.py --input_model frozen_darknet_yolov3_model.pb --transformations_config $MOD_OPT/extensions/front/tf/yolo_v3.json --batch 1
+	python $MOD_OPT/mo_tf.py --input_model frozen_darknet_yolov3_model.pb --transformations_config $MOD_OPT/extensions/front/tf/yolo_v3.json --batch 1 --output_dir /home/workspace/model
 fi
