@@ -171,7 +171,7 @@ def infer_on_stream(args, client):
                        cv2.FONT_HERSHEY_COMPLEX, 0.5, (200, 10, 10), 1)
             
             # When new person enters the video
-            if current_count > last_count:
+            if current_count >= last_count:
                 start_time = time.time()
                 total_count = total_count + current_count - last_count
                 client.publish("person", json.dumps({"total": total_count}))
